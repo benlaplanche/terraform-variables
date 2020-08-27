@@ -3,7 +3,7 @@ provider "aws" {
   secret_key = "mock_secret_key"
 }
 
-variable "minimum_password_length" {
+variable "a" {
   type    = number
   default = 8
 }
@@ -29,7 +29,7 @@ resource "aws_iam_account_password_policy" "present" {
 }
 
 resource "aws_iam_account_password_policy" "variables" {
-  minimum_password_length        = var.minimum_password_length
+  minimum_password_length        = var.a
   require_lowercase_characters   = var.require_lowercase_characters
   require_numbers                = true
   require_uppercase_characters   = true
